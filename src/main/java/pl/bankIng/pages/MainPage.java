@@ -32,6 +32,7 @@ public class MainPage {
     }
 
 
+
     public void clickMenuFinancemeter() {
         SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(menuFinancemeter));
         menuFinancemeter.click();
