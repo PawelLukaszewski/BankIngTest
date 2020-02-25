@@ -24,6 +24,12 @@ public class MainPage {
     @FindBy(id = "menu-financemeter")
     private WebElement menuFinancemeter;
 
+    @FindBy(id = "servicesGoals")
+    private WebElement servicesGoals;
+
+    @FindBy(id = "goal-new-name")
+    private WebElement nameForNewGoal;
+
     public void waitForCurtineAndClickCoockieButton() {
         SingletonWebDriver.getWait().until(ExpectedConditions.invisibilityOf(loader));
         SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(waitForCurtainShow));
@@ -31,10 +37,15 @@ public class MainPage {
         coockieButton.click();
     }
 
-
-
     public void clickMenuFinancemeter() {
         SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(menuFinancemeter));
         menuFinancemeter.click();
     }
+
+    public void clickServicesGoals() {
+        SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(servicesGoals));
+        servicesGoals.click();
+    }
+
+
 }
