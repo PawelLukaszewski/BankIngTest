@@ -21,6 +21,12 @@ public class GoalsPage {
     @FindBy(id = "goal-new-name")
     private WebElement nameForNewGoal;
 
+    @FindBy(id = "goal-new-amount")
+    private WebElement newGoalAmount;
+
+    @FindBy(xpath = "//button[@class=\"btn btn-primary btn-block btn-lg js-next-button\"]")
+    private WebElement nextButton;
+
     public void clickAddGoal() {
         SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(addGoal));
         addGoal.click();
@@ -31,8 +37,19 @@ public class GoalsPage {
         Actions actions = new Actions(SingletonWebDriver.getDriver());
         actions.moveToElement(childGoal).click().perform();
     }
-    public void addNameForNewGoal(){
+
+    public void addNameForNewGoal() {
         SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(nameForNewGoal));
         nameForNewGoal.sendKeys("Obóz rowerowy");
+    }
+
+    public void addNewGoalAmount() {
+        SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(newGoalAmount));
+        newGoalAmount.sendKeys("300");
+    }
+
+    public void clickNextButton() {
+        SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(nextButton));
+        nextButton.click();
     }
 }

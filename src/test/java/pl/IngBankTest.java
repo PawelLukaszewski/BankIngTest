@@ -12,10 +12,10 @@ public class IngBankTest {
     GoalsPage goalsPage;
 
 
-    @AfterTest
-    public void afterTest() {
-        SingletonWebDriver.quitDriver();
-    }
+//    @AfterTest
+//    public void afterTest() {
+//        SingletonWebDriver.quitDriver();
+//    }
 
     @BeforeTest
     public void beforeTest() {
@@ -33,6 +33,10 @@ public class IngBankTest {
         goalsPage.clickAddGoal();
         goalsPage.clickChildGoal();
         goalsPage.addNameForNewGoal();
+        goalsPage.addNewGoalAmount();
+        goalsPage.clickNextButton();
+        goalsPage.clickNextButton();
+        goalsPage.clickNextButton();
     }
 
 }
