@@ -12,10 +12,10 @@ public class IngBankTest {
     GoalsPage goalsPage;
 
 
-    @AfterTest
-    public void afterTest() {
-        SingletonWebDriver.quitDriver();
-    }
+//    @AfterTest
+//    public void afterTest() {
+//        SingletonWebDriver.quitDriver();
+//    }
 
     @BeforeTest
     public void beforeTest() {
