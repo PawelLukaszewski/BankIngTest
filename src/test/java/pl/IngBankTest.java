@@ -1,5 +1,6 @@
 package pl;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -42,7 +43,8 @@ public class IngBankTest {
         savingParametersPage.changeNewPeriod();
         savingParametersPage.addStartAmount();
         savingParametersPage.clickNextButton();
-//        savingParametersPage.clickNextButton();
+        savingParametersPage.clickAgreementButton();
+        Assert.assertEquals(savingParametersPage.getText(), "Twój cel został utworzony, życzymy powodzenia w oszczędzaniu");
     }
 
 }

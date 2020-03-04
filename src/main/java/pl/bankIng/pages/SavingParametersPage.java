@@ -8,11 +8,12 @@ import pl.SingletonWebDriver;
 
 public class SavingParametersPage {
 
+    String testToAssert;
+
     public SavingParametersPage() {
         PageFactory.initElements(SingletonWebDriver.getDriver(), this);
     }
 
-    //    @FindBy(id = "startAmountCheck")
     @FindBy(xpath = "//label[@class=\"goal-create-step2-params_start-amount-check_label\"]")
     private WebElement amountCheckBox;
 
@@ -24,6 +25,15 @@ public class SavingParametersPage {
 
     @FindBy(xpath = "//button[@class=\"btn btn-primary btn-block btn-lg js-next-button\"]")
     private WebElement nextButton;
+
+    @FindBy(xpath = "(//div[@class=\"row\"])[6]")
+    private WebElement randomclick;
+
+    @FindBy(xpath = "//button[@class=\"btn btn-primary btn-block btn-lg js-send\"]")
+    private WebElement agreementButton;
+
+    @FindBy(xpath = "//h4[@class=\"sum_title no-outline-on-focus\"]")
+    private WebElement xpathText;
 
 
     public void clickAmountCheckBox() {
@@ -45,8 +55,18 @@ public class SavingParametersPage {
 
     public void clickNextButton() {
         SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(nextButton));
-        nextButton.click();
+        randomclick.click();
         nextButton.click();
         nextButton.click();
     }
+
+    public void clickAgreementButton() {
+        SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(agreementButton));
+        agreementButton.click();
+    }
+
+    public String getText() {
+        return testToAssert = xpathText.getText();
+    }
+
 }
