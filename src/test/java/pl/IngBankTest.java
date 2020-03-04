@@ -5,11 +5,13 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pl.bankIng.pages.GoalsPage;
 import pl.bankIng.pages.MainPage;
+import pl.bankIng.pages.SavingParametersPage;
 
 public class IngBankTest {
 
     MainPage mainPage;
     GoalsPage goalsPage;
+    SavingParametersPage savingParametersPage;
 
 
 //    @AfterTest
@@ -21,6 +23,7 @@ public class IngBankTest {
     public void beforeTest() {
         mainPage = new MainPage();
         goalsPage = new GoalsPage();
+        savingParametersPage = new SavingParametersPage();
         SingletonWebDriver.getDriver().get("https://login.ingbank.pl/mojeing/demo/#home");
     }
 
@@ -35,8 +38,11 @@ public class IngBankTest {
         goalsPage.addNameForNewGoal();
         goalsPage.addNewGoalAmount();
         goalsPage.clickNextButton();
-        goalsPage.clickNextButton();
-        goalsPage.clickNextButton();
+        savingParametersPage.clickAmountCheckBox();
+        savingParametersPage.changeNewPeriod();
+        savingParametersPage.addStartAmount();
+        savingParametersPage.clickNextButton();
+//        savingParametersPage.clickNextButton();
     }
 
 }
