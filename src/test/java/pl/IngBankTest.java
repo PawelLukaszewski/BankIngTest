@@ -15,10 +15,10 @@ public class IngBankTest {
     SavingParametersPage savingParametersPage;
 
 
-    @AfterTest
-    public void afterTest() {
-        SingletonWebDriver.quitDriver();
-    }
+//    @AfterTest
+//    public void afterTest() {
+//        SingletonWebDriver.quitDriver();
+//    }
 
     @BeforeTest
     public void beforeTest() {
@@ -45,6 +45,7 @@ public class IngBankTest {
         savingParametersPage.clickNextButton();
         savingParametersPage.clickAgreementButton();
         Assert.assertEquals(savingParametersPage.getText(), "Twój cel został utworzony, życzymy powodzenia w oszczędzaniu");
+        savingParametersPage.clickCheckGoeal();
     }
 
 }

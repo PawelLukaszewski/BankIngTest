@@ -35,6 +35,9 @@ public class SavingParametersPage {
     @FindBy(xpath = "//h4[@class=\"sum_title no-outline-on-focus\"]")
     private WebElement xpathText;
 
+    @FindBy(xpath = "//a[@class=\"link  js-summary-link js-link-id-0\"]")
+    private WebElement checkGoeal;
+
 
     public void clickAmountCheckBox() {
         SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(amountCheckBox));
@@ -67,6 +70,11 @@ public class SavingParametersPage {
 
     public String getText() {
         return testToAssert = xpathText.getText();
+    }
+
+    public void clickCheckGoeal(){
+        SingletonWebDriver.getWait().until(ExpectedConditions.visibilityOf(checkGoeal));
+        checkGoeal.click();
     }
 
 }
